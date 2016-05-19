@@ -1,0 +1,21 @@
+module XMod {
+    
+    // X11
+    header "/usr/X11/include/X11/Xlib.h"
+    header "/usr/X11/include/X11/Xcms.h"
+    header "/usr/X11/include/X11/Xutil.h"
+    header "/usr/X11/include/X11/Xresource.h"
+    header "/usr/X11/include/X11/Xatom.h"
+    header "/usr/X11/include/X11/cursorfont.h"
+    header "/usr/X11/include/X11/keysymdef.h"
+    header "/usr/X11/include/X11/Xlibint.h"
+    header "/usr/X11/include/X11/Xproto.h"
+    header "/usr/X11/include/X11/Xprotostr.h"
+    header "/usr/X11/include/X11/extensions/XRandr.h"
+    
+    // Cairo
+    header "/usr/local/include/cairo/cairo.h"
+    header "/usr/local/include/cairo/cairo-xlib.h"
+    
+    header "/usr/local/include/pango-1.0/pango/pangocairo.h"
+}

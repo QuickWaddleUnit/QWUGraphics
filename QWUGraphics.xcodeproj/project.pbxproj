@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC47808E1CEE740500B65508 /* libXrandr.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4780871CEE740500B65508 /* libXrandr.2.dylib */; };
+		BC47808F1CEE740500B65508 /* libpixman-1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4780881CEE740500B65508 /* libpixman-1.0.dylib */; };
+		BC4780901CEE740500B65508 /* libpango-1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4780891CEE740500B65508 /* libpango-1.0.0.dylib */; };
+		BC4780911CEE740500B65508 /* libglib-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BC47808A1CEE740500B65508 /* libglib-2.0.0.dylib */; };
+		BC4780921CEE740500B65508 /* libpangocairo-1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BC47808B1CEE740500B65508 /* libpangocairo-1.0.0.dylib */; };
+		BC4780931CEE740500B65508 /* libX11.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BC47808C1CEE740500B65508 /* libX11.6.dylib */; };
+		BC4780941CEE740500B65508 /* libcairo.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BC47808D1CEE740500B65508 /* libcairo.2.dylib */; };
+		BC47809B1CEE742F00B65508 /* Surface.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4780981CEE742F00B65508 /* Surface.swift */; };
+		BC47809C1CEE742F00B65508 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4780991CEE742F00B65508 /* Context.swift */; };
+		BC47809D1CEE742F00B65508 /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC47809A1CEE742F00B65508 /* Pattern.swift */; };
+		BC47809F1CEE743D00B65508 /* QWUApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC47809E1CEE743D00B65508 /* QWUApplication.swift */; };
+		BC4780A31CEE745300B65508 /* CairoEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4780A11CEE745300B65508 /* CairoEnums.swift */; };
+		BC4780A41CEE745300B65508 /* CairoStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4780A21CEE745300B65508 /* CairoStructs.swift */; };
+		BC4780A61CEE745B00B65508 /* QWUWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4780A51CEE745B00B65508 /* QWUWidget.swift */; };
+		BC4780A91CEE746200B65508 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4780A71CEE746200B65508 /* Common.swift */; };
+		BC4780AA1CEE746200B65508 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4780A81CEE746200B65508 /* Geometry.swift */; };
+		BC4780AF1CEE747900B65508 /* QWUContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4780AE1CEE747900B65508 /* QWUContainer.swift */; };
+		BC4780B11CEE747B00B65508 /* QWUWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4780B01CEE747B00B65508 /* QWUWindow.swift */; };
 		BC47CEB51CEE737E00396868 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC47CEB41CEE737E00396868 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +41,26 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BC4780871CEE740500B65508 /* libXrandr.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libXrandr.2.dylib; path = /opt/X11/lib/libXrandr.2.dylib; sourceTree = "<absolute>"; };
+		BC4780881CEE740500B65508 /* libpixman-1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libpixman-1.0.dylib"; path = "/usr/local/Cellar/pixman/0.34.0/lib/libpixman-1.0.dylib"; sourceTree = "<absolute>"; };
+		BC4780891CEE740500B65508 /* libpango-1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libpango-1.0.0.dylib"; path = "/usr/local/Cellar/pango/1.38.1/lib/libpango-1.0.0.dylib"; sourceTree = "<absolute>"; };
+		BC47808A1CEE740500B65508 /* libglib-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libglib-2.0.0.dylib"; path = "/usr/local/Cellar/glib/2.46.2/lib/libglib-2.0.0.dylib"; sourceTree = "<absolute>"; };
+		BC47808B1CEE740500B65508 /* libpangocairo-1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libpangocairo-1.0.0.dylib"; path = "/usr/local/Cellar/pango/1.38.1/lib/libpangocairo-1.0.0.dylib"; sourceTree = "<absolute>"; };
+		BC47808C1CEE740500B65508 /* libX11.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libX11.6.dylib; path = /opt/X11/lib/libX11.6.dylib; sourceTree = "<absolute>"; };
+		BC47808D1CEE740500B65508 /* libcairo.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcairo.2.dylib; path = /usr/local/Cellar/cairo/1.14.6_1/lib/libcairo.2.dylib; sourceTree = "<absolute>"; };
+		BC4780981CEE742F00B65508 /* Surface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Surface.swift; sourceTree = "<group>"; };
+		BC4780991CEE742F00B65508 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		BC47809A1CEE742F00B65508 /* Pattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pattern.swift; sourceTree = "<group>"; };
+		BC47809E1CEE743D00B65508 /* QWUApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QWUApplication.swift; sourceTree = "<group>"; };
+		BC4780A11CEE745300B65508 /* CairoEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CairoEnums.swift; sourceTree = "<group>"; };
+		BC4780A21CEE745300B65508 /* CairoStructs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CairoStructs.swift; sourceTree = "<group>"; };
+		BC4780A51CEE745B00B65508 /* QWUWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QWUWidget.swift; sourceTree = "<group>"; };
+		BC4780A71CEE746200B65508 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		BC4780A81CEE746200B65508 /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
+		BC4780AB1CEE746800B65508 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		BC4780AE1CEE747900B65508 /* QWUContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QWUContainer.swift; sourceTree = "<group>"; };
+		BC4780B01CEE747B00B65508 /* QWUWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QWUWindow.swift; sourceTree = "<group>"; };
+		BC4780B21CEE751A00B65508 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		BC47CEB11CEE737E00396868 /* QWUGraphics */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = QWUGraphics; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC47CEB41CEE737E00396868 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -32,15 +70,93 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC47808E1CEE740500B65508 /* libXrandr.2.dylib in Frameworks */,
+				BC47808F1CEE740500B65508 /* libpixman-1.0.dylib in Frameworks */,
+				BC4780901CEE740500B65508 /* libpango-1.0.0.dylib in Frameworks */,
+				BC4780911CEE740500B65508 /* libglib-2.0.0.dylib in Frameworks */,
+				BC4780921CEE740500B65508 /* libpangocairo-1.0.0.dylib in Frameworks */,
+				BC4780931CEE740500B65508 /* libX11.6.dylib in Frameworks */,
+				BC4780941CEE740500B65508 /* libcairo.2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC4780861CEE73EC00B65508 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				BC4780871CEE740500B65508 /* libXrandr.2.dylib */,
+				BC4780881CEE740500B65508 /* libpixman-1.0.dylib */,
+				BC4780891CEE740500B65508 /* libpango-1.0.0.dylib */,
+				BC47808A1CEE740500B65508 /* libglib-2.0.0.dylib */,
+				BC47808B1CEE740500B65508 /* libpangocairo-1.0.0.dylib */,
+				BC47808C1CEE740500B65508 /* libX11.6.dylib */,
+				BC47808D1CEE740500B65508 /* libcairo.2.dylib */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		BC4780951CEE741400B65508 /* Cairo */ = {
+			isa = PBXGroup;
+			children = (
+				BC4780981CEE742F00B65508 /* Surface.swift */,
+				BC4780991CEE742F00B65508 /* Context.swift */,
+				BC47809A1CEE742F00B65508 /* Pattern.swift */,
+				BC4780A01CEE744800B65508 /* Enums */,
+			);
+			name = Cairo;
+			sourceTree = "<group>";
+		};
+		BC4780961CEE741900B65508 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				BC4780A51CEE745B00B65508 /* QWUWidget.swift */,
+				BC4780AC1CEE746B00B65508 /* Containers */,
+			);
+			name = Widgets;
+			sourceTree = "<group>";
+		};
+		BC4780971CEE741F00B65508 /* Extra */ = {
+			isa = PBXGroup;
+			children = (
+				BC4780A71CEE746200B65508 /* Common.swift */,
+				BC4780A81CEE746200B65508 /* Geometry.swift */,
+			);
+			name = Extra;
+			sourceTree = "<group>";
+		};
+		BC4780A01CEE744800B65508 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				BC4780A11CEE745300B65508 /* CairoEnums.swift */,
+				BC4780A21CEE745300B65508 /* CairoStructs.swift */,
+			);
+			name = Enums;
+			sourceTree = "<group>";
+		};
+		BC4780AC1CEE746B00B65508 /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				BC4780AE1CEE747900B65508 /* QWUContainer.swift */,
+				BC4780AD1CEE747000B65508 /* Windows */,
+			);
+			name = Containers;
+			sourceTree = "<group>";
+		};
+		BC4780AD1CEE747000B65508 /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				BC4780B01CEE747B00B65508 /* QWUWindow.swift */,
+			);
+			name = Windows;
+			sourceTree = "<group>";
+		};
 		BC47CEA81CEE737E00396868 = {
 			isa = PBXGroup;
 			children = (
+				BC4780B21CEE751A00B65508 /* .gitignore */,
+				BC4780861CEE73EC00B65508 /* Libraries */,
 				BC47CEB31CEE737E00396868 /* QWUGraphics */,
 				BC47CEB21CEE737E00396868 /* Products */,
 			);
@@ -57,6 +173,11 @@
 		BC47CEB31CEE737E00396868 /* QWUGraphics */ = {
 			isa = PBXGroup;
 			children = (
+				BC4780951CEE741400B65508 /* Cairo */,
+				BC47809E1CEE743D00B65508 /* QWUApplication.swift */,
+				BC4780961CEE741900B65508 /* Widgets */,
+				BC4780AB1CEE746800B65508 /* module.modulemap */,
+				BC4780971CEE741F00B65508 /* Extra */,
 				BC47CEB41CEE737E00396868 /* main.swift */,
 			);
 			path = QWUGraphics;
@@ -119,7 +240,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC47809C1CEE742F00B65508 /* Context.swift in Sources */,
+				BC4780A41CEE745300B65508 /* CairoStructs.swift in Sources */,
+				BC4780A31CEE745300B65508 /* CairoEnums.swift in Sources */,
+				BC4780B11CEE747B00B65508 /* QWUWindow.swift in Sources */,
+				BC4780A61CEE745B00B65508 /* QWUWidget.swift in Sources */,
+				BC4780A91CEE746200B65508 /* Common.swift in Sources */,
 				BC47CEB51CEE737E00396868 /* main.swift in Sources */,
+				BC47809F1CEE743D00B65508 /* QWUApplication.swift in Sources */,
+				BC47809D1CEE742F00B65508 /* Pattern.swift in Sources */,
+				BC47809B1CEE742F00B65508 /* Surface.swift in Sources */,
+				BC4780AF1CEE747900B65508 /* QWUContainer.swift in Sources */,
+				BC4780AA1CEE746200B65508 /* Geometry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,14 +343,46 @@
 		BC47CEB91CEE737E00396868 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/cairo,
+					/usr/X11/include,
+					"/usr/local/include/pango-1.0/**",
+					"/usr/local/include/glib-2.0/**",
+					"/usr/local/lib/glib-2.0/**",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/X11/lib,
+					/usr/local/Cellar/pixman/0.34.0/lib,
+					/usr/local/Cellar/pango/1.38.1/lib,
+					/usr/local/Cellar/glib/2.46.2/lib,
+					/usr/local/Cellar/cairo/1.14.6_1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/QWUGraphics";
 			};
 			name = Debug;
 		};
 		BC47CEBA1CEE737E00396868 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/cairo,
+					/usr/X11/include,
+					"/usr/local/include/pango-1.0/**",
+					"/usr/local/include/glib-2.0/**",
+					"/usr/local/lib/glib-2.0/**",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/X11/lib,
+					/usr/local/Cellar/pixman/0.34.0/lib,
+					/usr/local/Cellar/pango/1.38.1/lib,
+					/usr/local/Cellar/glib/2.46.2/lib,
+					/usr/local/Cellar/cairo/1.14.6_1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/QWUGraphics";
 			};
 			name = Release;
 		};
@@ -241,6 +405,7 @@
 				BC47CEBA1CEE737E00396868 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
