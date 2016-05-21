@@ -101,7 +101,8 @@ public class QWUApplication {
                 print(XKeysymToKeycode(display, key))
                 print(String(cString: XKeysymToString(key), encoding: NSUTF8StringEncoding))
                 
-                // TODO: Figure out what the cuss to do here
+                // TODO: Figure out what to do here. Main keys functioning, need to decode special keys
+                // like arrow keys, home, fn, etc.
                 
     //                print(String(cString: keybuf))
     //                var s = String(cString: XKeysymToString(key))
@@ -119,7 +120,7 @@ public class QWUApplication {
             case Expose:
                 // TODO: Add clip to not redraw that which doesnt need to be
                 let event = e.xexpose
-                windows[event.window]?.draw()
+                windows[event.window]?.drawRect()
             case ConfigureNotify:
                 // TODO: On resize, clip background to draw faster
                 let event = e.xconfigure
@@ -133,10 +134,10 @@ public class QWUApplication {
                     eventRect.origin.y = CGFloat(event.y)
                     eventRect.size.width = CGFloat(event.width)
                     eventRect.size.height = CGFloat(event.height)
-                    win.setRect(eventRect)
-                    win.drawBack()
+                    win.rectChangeEvent(eventRect)
+                    win.drawBackground()
                 }
-                win.draw()
+                win.drawRect()
                 
             case FocusIn:
                 let event = e.xfocus
@@ -147,14 +148,14 @@ public class QWUApplication {
                 
             case MapNotify:
                 let event = e.xcreatewindow
-                windows[event.window]?.drawBack()
+                windows[event.window]?.drawBackground()
                 
             case ClientMessage:
                 let event = e.xclient
                 let win = windows[event.window]!
                 if (UInt(event.data.l.0) == XInternAtom(display, "WM_DELETE_WINDOW", False)) {
                     QWUApplication.removeWindow(win: win)
-                    win.destroy()
+                    activeWindow = nil
                 }
             default:
                 print("Dropping unhandled XEevent.type(\(e.type))")

@@ -9,14 +9,30 @@
 import XMod
 import Foundation
 
-public class QWUWindow: QWUContainer {
+public class QWUWindow: QWUContainer, QWUVisible, QWUMouseResponder {
     private var surface: QWUSurface
-    private var context: QWUContext
+    private(set) var context: QWUContext
     private(set) var winID: Window
-    private var back: QWUColor?
-    var background = 1
+    private(set) public var back: QWUColor
+    internal(set) public var rect: CGRect
+    public var selectable: Bool
+    public var visible: Bool {
+        didSet {
+            if visible {
+                show()
+            } else {
+                hide()
+            }
+        }
+    }
     
-    public init(screen: Int32 = QWUApplication.defaultScreen(), rect r: CGRect) {
+    deinit {
+        if !destroyed {
+            destroy()
+        }
+    }
+    
+    public init(screen: Int32 = QWUApplication.defaultScreen(), background: QWUColor = QWUColor.white, rect r: CGRect) {
         
         let dsp = QWUApplication.display!
         
@@ -25,34 +41,61 @@ public class QWUWindow: QWUContainer {
         XSelectInput(dsp, winID, ButtonPressMask | KeyPressMask | KeyReleaseMask | ExposureMask | StructureNotifyMask | FocusChangeMask | KeymapStateMask)
         var wmDeleteMessage = XInternAtom(dsp, "WM_DELETE_WINDOW", False)
         XSetWMProtocols(dsp, winID, &wmDeleteMessage, 1)
+        back = background
+        selectable = true
         
-        // Setup Cairo srface and context
+        // Setup Cairo surface and context
         surface = QWUSurface(display: dsp, drawable: winID, visual: XDefaultVisual(dsp, screen), size: r.size)
         context = QWUContext(target: surface)
         
-        super.init()
+        visible = false
+    
         // Set Rect
         rect = r
     }
     
-    public convenience init(position: CGPoint, size: CGSize) {
-        self.init(rect: CGRect(origin: position, size: size))
+    public convenience override init() {
+        self.init(rect: CGRect(x: 0, y: 0, width: 300, height: 300))
     }
     
-    public convenience init(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat) {
-        self.init(rect: CGRect(x: x, y: y, width: width, height: height))
+    public convenience init(position: CGPoint, size: CGSize, background: QWUColor = QWUColor.white) {
+        self.init(background: background, rect: CGRect(origin: position, size: size))
+    }
+    
+    public convenience init(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, background: QWUColor = QWUColor.white) {
+        self.init(background: background, rect: CGRect(x: x, y: y, width: width, height: height))
     }
     
     public override func destroy() {
+        super.destroy()
+        leftClick = nil
+        rightClick = nil
+        middleClick = nil
+        leftClickRelease = nil
+        rightClickRelease = nil
+        middleClickRelease = nil
         context.destroy()
         surface.destroy()
         XDestroyWindow(QWUApplication.display, winID)
     }
     
-    internal func setRect(_ r: CGRect) {
+    internal func rectChangeEvent(_ r: CGRect) {
         rect = r
         surface.setSize(rect.size)
     }
+    
+    public func setRect(_ r: CGRect) {
+        rect = r
+        XMoveResizeWindow(QWUApplication.display, winID, Int32(r.origin.x), Int32(r.origin.y), UInt32(r.size.width), UInt32(r.size.height))
+        surface.setSize(rect.size)
+    }
+    
+    public var leftClick: (() -> ())?
+    public var rightClick: (() -> ())?
+    public var middleClick: (() -> ())?
+    public var leftClickRelease: (() -> ())?
+    public var rightClickRelease: (() -> ())?
+    public var middleClickRelease: (() -> ())?
     
     internal func click(button: MouseButton, atPos: CGPoint) {
         // TODO: Check contained widgets
@@ -67,23 +110,22 @@ public class QWUWindow: QWUContainer {
             print("Middle click")
         case .WheelUp:
             print("Wheel Up")
-        default:
-            print("Undefined Button")
+        case .WheelDown:
+            print("Wheel Down")
         }
     }
     
     // This function will draw the background for the window
-    func drawBack(color: QWUColor = QWUColor.green) {
-        context.setSourceColor(color)
+    public func drawBackground() {
+        context.setSourceColor(back)
         context.paint()
     }
     
-    func draw() {
+    public func drawRect() {
         
     }
     
     public func show() {
-        visible = true
         let dsp = QWUApplication.display
         let pos = rect.origin.toIntRep()
         XMapWindow(dsp, winID)
@@ -91,7 +133,6 @@ public class QWUWindow: QWUContainer {
     }
     
     public func hide() {
-        visible = false
         XUnmapWindow(QWUApplication.display, winID)
     }
     

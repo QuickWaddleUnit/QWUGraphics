@@ -12,11 +12,6 @@ import Foundation
 public class QWUContainer: QWUWidget {
     private var widgets = [QWUWidget]()
     
-    override init() {
-        super.init()
-        rect = CGRect.infinite
-    }
-    
     public func addWidget(wid: QWUWidget) {
         widgets.append(wid)
         wid.parentWidget = self
@@ -30,11 +25,21 @@ public class QWUContainer: QWUWidget {
     }
     
     public func widgetAt(_ pos: CGPoint) -> QWUWidget? {
-        for wid in widgets {
-            if wid.rect.contains(pos) && wid.visible {
-                return wid
+        for w in widgets {
+            if let wid = w as? QWUVisible {
+                if wid.rect.contains(pos) && wid.visible {
+                    return w
+                }
             }
         }
         return nil
+    }
+    
+    public override func destroy() {
+        super.destroy()
+        for wid in widgets {
+            wid.destroy()
+        }
+        widgets.removeAll()
     }
 }

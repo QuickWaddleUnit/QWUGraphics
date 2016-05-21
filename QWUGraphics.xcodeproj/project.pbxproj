@@ -21,11 +21,13 @@
 		BC4780A31CEE745300B65508 /* CairoEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4780A11CEE745300B65508 /* CairoEnums.swift */; };
 		BC4780A41CEE745300B65508 /* CairoStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4780A21CEE745300B65508 /* CairoStructs.swift */; };
 		BC4780A61CEE745B00B65508 /* QWUWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4780A51CEE745B00B65508 /* QWUWidget.swift */; };
-		BC4780A91CEE746200B65508 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4780A71CEE746200B65508 /* Common.swift */; };
+		BC4780A91CEE746200B65508 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4780A71CEE746200B65508 /* Enums.swift */; };
 		BC4780AA1CEE746200B65508 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4780A81CEE746200B65508 /* Geometry.swift */; };
 		BC4780AF1CEE747900B65508 /* QWUContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4780AE1CEE747900B65508 /* QWUContainer.swift */; };
 		BC4780B11CEE747B00B65508 /* QWUWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4780B01CEE747B00B65508 /* QWUWindow.swift */; };
 		BC47CEB51CEE737E00396868 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC47CEB41CEE737E00396868 /* main.swift */; };
+		BC7A31D71CEFBFFD00A564B6 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = BC7A31D61CEFBFFD00A564B6 /* README.md */; };
+		BC7A31D91CEFDDFD00A564B6 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7A31D81CEFDDFD00A564B6 /* Protocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,7 +57,7 @@
 		BC4780A11CEE745300B65508 /* CairoEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CairoEnums.swift; sourceTree = "<group>"; };
 		BC4780A21CEE745300B65508 /* CairoStructs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CairoStructs.swift; sourceTree = "<group>"; };
 		BC4780A51CEE745B00B65508 /* QWUWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QWUWidget.swift; sourceTree = "<group>"; };
-		BC4780A71CEE746200B65508 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		BC4780A71CEE746200B65508 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		BC4780A81CEE746200B65508 /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 		BC4780AB1CEE746800B65508 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		BC4780AE1CEE747900B65508 /* QWUContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QWUContainer.swift; sourceTree = "<group>"; };
@@ -63,6 +65,8 @@
 		BC4780B21CEE751A00B65508 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		BC47CEB11CEE737E00396868 /* QWUGraphics */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = QWUGraphics; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC47CEB41CEE737E00396868 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		BC7A31D61CEFBFFD00A564B6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BC7A31D81CEFDDFD00A564B6 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +124,8 @@
 		BC4780971CEE741F00B65508 /* Extra */ = {
 			isa = PBXGroup;
 			children = (
-				BC4780A71CEE746200B65508 /* Common.swift */,
+				BC4780A71CEE746200B65508 /* Enums.swift */,
+				BC7A31D81CEFDDFD00A564B6 /* Protocols.swift */,
 				BC4780A81CEE746200B65508 /* Geometry.swift */,
 			);
 			name = Extra;
@@ -155,6 +160,7 @@
 		BC47CEA81CEE737E00396868 = {
 			isa = PBXGroup;
 			children = (
+				BC7A31D61CEFBFFD00A564B6 /* README.md */,
 				BC4780B21CEE751A00B65508 /* .gitignore */,
 				BC4780861CEE73EC00B65508 /* Libraries */,
 				BC47CEB31CEE737E00396868 /* QWUGraphics */,
@@ -244,10 +250,12 @@
 				BC4780A41CEE745300B65508 /* CairoStructs.swift in Sources */,
 				BC4780A31CEE745300B65508 /* CairoEnums.swift in Sources */,
 				BC4780B11CEE747B00B65508 /* QWUWindow.swift in Sources */,
+				BC7A31D71CEFBFFD00A564B6 /* README.md in Sources */,
 				BC4780A61CEE745B00B65508 /* QWUWidget.swift in Sources */,
-				BC4780A91CEE746200B65508 /* Common.swift in Sources */,
+				BC4780A91CEE746200B65508 /* Enums.swift in Sources */,
 				BC47CEB51CEE737E00396868 /* main.swift in Sources */,
 				BC47809F1CEE743D00B65508 /* QWUApplication.swift in Sources */,
+				BC7A31D91CEFDDFD00A564B6 /* Protocols.swift in Sources */,
 				BC47809D1CEE742F00B65508 /* Pattern.swift in Sources */,
 				BC47809B1CEE742F00B65508 /* Surface.swift in Sources */,
 				BC4780AF1CEE747900B65508 /* QWUContainer.swift in Sources */,

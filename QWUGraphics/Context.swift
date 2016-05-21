@@ -13,10 +13,6 @@ class QWUContext {
     let sfc: QWUSurface
     var cr: OpaquePointer
     
-    deinit {
-        print("context")
-    }
-    
     init(target: QWUSurface) {
         let ptr = cairo_create(target.sfc)
         assert(ptr != nil, "Context is nil")

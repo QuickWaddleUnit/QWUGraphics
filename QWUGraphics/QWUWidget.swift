@@ -13,15 +13,9 @@ public class QWUWidget {
     public var name: String = ""
     public var parentWidget: QWUWidget?
     public var focus = false
-    internal var rect = CGRect.zero
-    internal var visible = false
+    internal var destroyed = false
     
-    public func destroy() {}
-    
-    public var leftClick: (() -> ())?
-    public var middleClick: (() -> ())?
-    public var rightClick: (() -> ())?
-    public var leftClickRelease: (() -> ())?
-    public var middleClickRelease: (() -> ())?
-    public var rightClickRelease: (() -> ())?
+    public func destroy() {
+        destroyed = true
+    }
 }

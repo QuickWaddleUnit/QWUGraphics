@@ -12,10 +12,6 @@ import Foundation
 class QWUSurface {
     var sfc: OpaquePointer?
     
-    deinit {
-        print("sfc")
-    }
-    
     init(display: UnsafeMutablePointer<Display>, drawable: Drawable, visual: UnsafeMutablePointer<Visual>, size: CGSize) {
         let intSize = size.toIntRep()
         sfc = cairo_xlib_surface_create(display, drawable, visual, intSize.0, intSize.1)

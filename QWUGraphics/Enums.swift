@@ -6,8 +6,6 @@
 //  Copyright © 2016 Emilio Espinosa. All rights reserved.
 //
 
-import XMod
-
 enum MouseButton: UInt32 {
     case Left = 1
     case Middle
