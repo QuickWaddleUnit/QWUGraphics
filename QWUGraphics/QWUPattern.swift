@@ -9,7 +9,12 @@
 import XMod
 import Foundation
 
-class Pattern {
+// QWUPattern class
+// Description:
+// Responsible for the main drawing operations or masks to be applied to the context. What this
+// class holds will be what is actually drawn on the surface.
+
+public class QWUPattern {
     
     var patternPtr: OpaquePointer
     

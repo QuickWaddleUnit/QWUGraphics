@@ -1,12 +1,15 @@
 //
-//  CairoStructs.swift
-//  QWUI
+//  Common.swift
+//  QWUGraphics
 //
-//  Created by Emilio Espinosa on 5/14/16.
-//  Copyright © 2016 Emilio Espinosa. All rights reserved.
+//  Created by Emilio Espinosa on 5/22/16.
+//
 //
 
-import XMod
+// QWUColor struct
+// Description:
+// Responsible for holding the RGBA values of any color to be used in this library.
+// Includes some basic preset colors.
 
 public struct QWUColor {
     internal var redVal: Double

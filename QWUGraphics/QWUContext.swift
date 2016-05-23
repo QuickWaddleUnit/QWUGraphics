@@ -8,7 +8,12 @@
 
 import XMod
 
-class QWUContext {
+// QWUContext class
+// Description:
+// Cairo context object. This object is responsible for holding the color and masks that will
+// be applied to the surface.
+
+public class QWUContext {
     
     let sfc: QWUSurface
     var cr: OpaquePointer
@@ -45,8 +50,8 @@ class QWUContext {
         }
     }
     
-    func popGroup() -> Pattern {
-        return Pattern(cairo_pop_group(cr))
+    func popGroup() -> QWUPattern {
+        return QWUPattern(cairo_pop_group(cr))
     }
     
     func popGroupToSource() {
@@ -57,7 +62,7 @@ class QWUContext {
         cairo_set_source_rgba(cr, color.redVal, color.greenVal, color.blueVal, color.alpha)
     }
     
-    func setSource(_ source: Pattern) {
+    func setSource(_ source: QWUPattern) {
         cairo_set_source(cr, source.patternPtr)
     }
     
