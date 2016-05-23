@@ -21,7 +21,7 @@ public class QWUContainer: QWUWidget {
     // Name: addWidget()
     // 1 parameter
     // (wid: QWUWidget) - Widget that will be added to the container
-    // Description: Adds a widget to the container and sets self as its parent
+    // Description: Adds a widget to the container and sets self as its parent.
     public func addWidget(wid: QWUWidget) {
         widgets.append(wid)
         wid.parentWidget = self
@@ -30,7 +30,7 @@ public class QWUContainer: QWUWidget {
     // Name: removeWidget()
     // 1 parameter
     // (wid: QWUWidget) - Widget that needs to be removed from the container
-    // Description: Removes the desired widget from the container if found
+    // Description: Removes the desired widget from the container if found.
     public func removeWidget(wid: QWUWidget) {
         if let index = widgets.index(where: {$0 === wid}) {
             widgets.remove(at: index)
@@ -42,7 +42,7 @@ public class QWUContainer: QWUWidget {
     // 1 parameter
     // (_ pos: CGPoint) - Point that might be contained inside a widget
     // Description: Searches for a widget that contains the point supplied; the widget
-    // must be visible
+    // must be visible.
     // Returns: QWUWidget?
     public func widgetAt(_ pos: CGPoint) -> QWUWidget? {
         for w in widgets {
@@ -57,7 +57,7 @@ public class QWUContainer: QWUWidget {
     
     // Name: destroy()
     // No parameters
-    // Description: Removes and destroys all contained widgets
+    // Description: Removes and destroys all contained widgets.
     public override func destroy() {
         super.destroy()
         for wid in widgets {

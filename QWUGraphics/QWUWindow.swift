@@ -74,7 +74,7 @@ public class QWUWindow: QWUContainer, QWUVisible, QWUMouseResponder {
     
     // Name: destroy()
     // No parameters
-    // Description: Releases all its resources and destroys the xlib window
+    // Description: Releases all its resources and destroys the xlib window.
     public override func destroy() {
         super.destroy()
         leftClick = nil
@@ -91,7 +91,7 @@ public class QWUWindow: QWUContainer, QWUVisible, QWUMouseResponder {
     // Name: rectChangeEvent()
     // 1 parameter
     // (_ r: CGRect) - New rect given from the resize event
-    // Description: Sets the new rect as its own and fixes the size of the cairo surface
+    // Description: Sets the new rect as its own and fixes the size of the cairo surface.
     internal func rectChangeEvent(_ r: CGRect) {
         rect = r
         surface.setSize(rect.size)
@@ -100,7 +100,7 @@ public class QWUWindow: QWUContainer, QWUVisible, QWUMouseResponder {
     // Name: setRect()
     // 1 parameter
     // (_ r: CGRect) - Rect to become the new size and position of the window
-    // Description: Moves and Resizes the window to the specified rect
+    // Description: Moves and Resizes the window to the specified rect.
     public func setRect(_ r: CGRect) {
         rect = r
         XMoveResizeWindow(QWUApplication.display, winID, Int32(r.origin.x), Int32(r.origin.y), UInt32(r.size.width), UInt32(r.size.height))
@@ -120,7 +120,7 @@ public class QWUWindow: QWUContainer, QWUVisible, QWUMouseResponder {
     // (button: MouseButton) - Mouse button that was clicked
     // (atPos: CGPoint) - Position of mouse click
     // Description: Handles the mouse click event depending on the appropriate
-    // function attached to each mouse event, if any
+    // function attached to each mouse event, if any.
     internal func click(button: MouseButton, atPos: CGPoint) {
         // TODO: Check contained widgets
         switch button {
@@ -142,7 +142,7 @@ public class QWUWindow: QWUContainer, QWUVisible, QWUMouseResponder {
     
     // Name: drawBackground()
     // No parameters
-    // Description: This function will draw the background for the window
+    // Description: This function will draw the background for the window.
     public func drawBackground() {
         context.setSourceColor(back)
         context.paint()
@@ -150,7 +150,7 @@ public class QWUWindow: QWUContainer, QWUVisible, QWUMouseResponder {
     
     // Name: drawRect()
     // No parameters
-    // Description: Draws the window and all of its contined widgets
+    // Description: Draws the window and all of its contined widgets.
     public func drawRect() {
         
     }
@@ -158,7 +158,7 @@ public class QWUWindow: QWUContainer, QWUVisible, QWUMouseResponder {
     // Name: show()
     // No parameter
     // Description: Maps the window to the display to have it appear on the screen. Do
-    // no use this function directly, use the visible property instead
+    // no use this function directly, use the visible property instead.
     internal func show() {
         let dsp = QWUApplication.display
         let pos = rect.origin.toIntRep()
@@ -169,7 +169,7 @@ public class QWUWindow: QWUContainer, QWUVisible, QWUMouseResponder {
     // Name: hide()
     // No parameter
     // Description: Unmaps the window to the display to have it disappear from the screen. Do
-    // no use this function directly, use the visible property instead
+    // no use this function directly, use the visible property instead.
     internal func hide() {
         XUnmapWindow(QWUApplication.display, winID)
     }
@@ -177,7 +177,7 @@ public class QWUWindow: QWUContainer, QWUVisible, QWUMouseResponder {
     // Name: keyEvent()
     // 1 parameter
     // (buffer: String) - Buffer supplied from the main loop key events
-    // Description: Decode the buffer to be used by the window or be forwarded to a contained
+    // Description: Decode the buffer to be used by the window or be forwarded to a contained.
     // widget
     public func keyEvent(buffer: String) {
         // TODO: Do stuff with key

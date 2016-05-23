@@ -21,7 +21,7 @@ public class QWUWidget {
     
     // Name: destroy()
     // No parameters
-    // Description: Base destroy function which marks a widget as being destroyed
+    // Description: Base destroy function which marks a widget as being destroyed.
     public func destroy() {
         destroyed = true
     }

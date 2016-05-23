@@ -23,14 +23,14 @@ public class QWUApplication {
     // MARK: Xlib Functions
     // Name: screenCount()
     // No parameters
-    // Description: Returns the number of screens associated with the current display
+    // Description: Returns the number of screens associated with the current display.
     static func screenCount() -> Int {
         return Int(XScreenCount(display))
     }
     
     // Name: defaultScreen()
     // No parameters
-    // Description: Returns the default screen identifier for the current display
+    // Description: Returns the default screen identifier for the current display.
     static func defaultScreen() -> Int32 {
         assert(display != nil, "Display has not been initialized!")
         return XDefaultScreen(display)
@@ -40,7 +40,7 @@ public class QWUApplication {
     // addWindow()
     // 1 parameter
     // (win: QWUWindow) - Window that needs to be added to list
-    // Description: Adds the supplied window to the application
+    // Description: Adds the supplied window to the application.
     static func addWindow(win: QWUWindow) {
         windows[win.winID] = win
     }
@@ -48,21 +48,21 @@ public class QWUApplication {
     // Name: removeWindow()
     // 1 parameter
     // (win: QWUWindow) - Window to remove from application
-    // Description: Removes the window from the application
+    // Description: Removes the window from the application.
     static func removeWindow(win: QWUWindow) {
         windows.removeValue(forKey: win.winID)
     }
     
     // Name: getWindows()
     // No parameters
-    // Description: Returns a copy of the windows dictionary
+    // Description: Returns a copy of the windows dictionary.
     static func getWindows() -> [UInt: QWUWindow] {
         return windows
     }
     
     // Name: getActiveWindow()
     // No parameters
-    // Description: Returns the currently focused window(if any)
+    // Description: Returns the currently focused window(if any).
     static func getActiveWindow() -> QWUWindow? {
         return activeWindow
     }
@@ -88,7 +88,7 @@ public class QWUApplication {
     
     // Name: runningLoop()
     // No parameters
-    // Description: Set of functions to run every frame of the application
+    // Description: Set of functions to run every frame of the application.
     private static func runningLoop() {
         checkEvent()
     }
@@ -96,7 +96,7 @@ public class QWUApplication {
     // Name: startTimer()
     // No parameters
     // Description: Starts the timer to execute the run loop every frame as specified by the
-    // display
+    // display.
     private static func startTimer() {
 //        TODO: Uncomment and use for Linux
 //        let config = XRRGetScreenInfo(display, XRootWindow(display, defaultScreen()))
@@ -115,7 +115,7 @@ public class QWUApplication {
     
     // Name: stopTimer()
     // No parameters
-    // Description: Invalidates the run loop timer and stops the run loop
+    // Description: Invalidates the run loop timer and stops the run loop.
     private static func stopTimer() {
         dispatch_source_cancel(timer!)
         timer = nil
@@ -125,7 +125,7 @@ public class QWUApplication {
     // Name: checkEvent()
     // No parameters
     // Description: Check the events of the xlib windows and flush the event queue. This includes
-    // keyboard and mouse input, active window focus, and exposing a window
+    // keyboard and mouse input, active window focus, and exposing a window.
     static func checkEvent() {
         var key: KeySym = KeySym()
         var e: XEvent = XEvent()

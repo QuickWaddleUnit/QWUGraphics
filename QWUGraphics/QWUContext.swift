@@ -9,8 +9,7 @@
 import XMod
 
 // QWUContext class
-// Description:
-// Cairo context object. This object is responsible for holding the color and masks that will
+// Description: Cairo context object. This object is responsible for holding the color and masks that will
 // be applied to the surface.
 
 public class QWUContext {

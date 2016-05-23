@@ -10,8 +10,7 @@ import XMod
 import Foundation
 
 // QWUSurface class
-// Description:
-// This class will be used to hold the pointer to the cairo surface used by the xlib windows.
+// Description: This class will be used to hold the pointer to the cairo surface used by the xlib windows.
 
 public class QWUSurface {
     var sfc: OpaquePointer
