@@ -9,16 +9,15 @@
 import XMod
 import Foundation
 
-class QWUSurface {
-    var sfc: OpaquePointer?
+// QWUSurface class
+// Description: This class will be used to hold the pointer to the cairo surface used by the xlib windows.
+
+public class QWUSurface {
+    var sfc: OpaquePointer
     
     init(display: UnsafeMutablePointer<Display>, drawable: Drawable, visual: UnsafeMutablePointer<Visual>, size: CGSize) {
         let intSize = size.toIntRep()
         sfc = cairo_xlib_surface_create(display, drawable, visual, intSize.0, intSize.1)
-    }
-    
-    func destroy() {
-        cairo_surface_destroy(sfc)
     }
     
     init(other: QWUSurface, content: Content, size: CGSize) {
@@ -31,6 +30,10 @@ class QWUSurface {
     
     init(target: QWUSurface, rect: CGRect) {
         sfc = cairo_surface_create_for_rectangle(target.sfc, Double(rect.origin.x), Double(rect.origin.y), Double(rect.size.width), Double(rect.size.height))
+    }
+    
+    func destroy() {
+        cairo_surface_destroy(sfc)
     }
     
     func status() -> Status {
