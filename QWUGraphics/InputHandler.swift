@@ -9,5 +9,5 @@
 import Foundation
 
 protocol InputHandler {
-
+    func handleEvent(event: QWUEvent)
 }
