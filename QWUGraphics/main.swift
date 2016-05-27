@@ -14,7 +14,7 @@ func setup() {
     QWUApplication.addWindow(win: w)
     QWUApplication.addWindow(win: w2)
     w.visible = true
-    w2.show()
+    w2.visible = true
 }
 
 setup()
