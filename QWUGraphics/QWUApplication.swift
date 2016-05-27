@@ -14,6 +14,9 @@ public class QWUApplication {
     private static var windows = [UInt: QWUWindow]()
     internal static var activeWindow: QWUWindow? = nil
     
+    // Event Handlers
+    private static var eventHandlers: [InputHandler]?
+    
     static func screenCount() -> Int {
         return Int(XScreenCount(display))
     }
@@ -97,9 +100,25 @@ public class QWUApplication {
             case KeyPress, KeyRelease:
                 let keybuf = UnsafeMutablePointer<Int8>(allocatingCapacity: 20)
                 XLookupString(&e.xkey, keybuf, 20, &key, nil)
-                print(key)
-                print(XKeysymToKeycode(display, key))
-                print(String(cString: XKeysymToString(key), encoding: NSUTF8StringEncoding))
+                //print(key)
+                //print(XKeysymToKeycode(display, key))
+                // TODO: littleEndian might not work on all Linux machines! We should think about changing to Xcb instead of Xlib
+                let keyUniVal = UnicodeScalar(Int(key.littleEndian))
+                if keyUniVal.isASCII {
+                    let charVal = Character.init(keyUniVal)
+                    
+                    let event = QWUEvent.init(type: .Keyboard, characterValue: charVal)
+                    //Send key to event handlers
+                    print(charVal)
+                    guard let handlers = eventHandlers else {
+                        break
+                    }
+                    for handler in handlers {
+                        handler.handleEvent(event: event)
+                    }
+                }
+
+                //print(String(cString: XKeysymToString(key), encoding: NSUTF8StringEncoding))
                 
                 // TODO: Figure out what to do here. Main keys functioning, need to decode special keys
                 // like arrow keys, home, fn, etc.

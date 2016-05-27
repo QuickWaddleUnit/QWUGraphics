@@ -9,11 +9,17 @@
 import Foundation
 
 protocol TextHandler: InputHandler {
-    func textEditingBegan(input: String)
-    func textEditingChanged(input: String)
-    func textEditingEnded(input: String)
+    
+    func textEditingBegan(input: Character)
+    func textEditingChanged(input: Character)
+    func textEditingEnded(input: Character)
 }
 
 extension TextHandler {
     
+    func handleEvent(event: QWUEvent) {
+        if event.type != .Keyboard { return }
+        
+        textEditingChanged(input: event.characterValue)
+    }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7A02F0EB1CF8123A006DA03B /* InputHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02F0EA1CF8123A006DA03B /* InputHandler.swift */; };
 		7A02F0ED1CF812BD006DA03B /* TextHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02F0EC1CF812BD006DA03B /* TextHandler.swift */; };
+		7A3756B11CF820C30050AFA8 /* QWUEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3756B01CF820C30050AFA8 /* QWUEvent.swift */; };
 		BC47808E1CEE740500B65508 /* libXrandr.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4780871CEE740500B65508 /* libXrandr.2.dylib */; };
 		BC47808F1CEE740500B65508 /* libpixman-1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4780881CEE740500B65508 /* libpixman-1.0.dylib */; };
 		BC4780901CEE740500B65508 /* libpango-1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4780891CEE740500B65508 /* libpango-1.0.0.dylib */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		7A02F0EA1CF8123A006DA03B /* InputHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputHandler.swift; sourceTree = "<group>"; };
 		7A02F0EC1CF812BD006DA03B /* TextHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextHandler.swift; sourceTree = "<group>"; };
+		7A3756B01CF820C30050AFA8 /* QWUEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QWUEvent.swift; sourceTree = "<group>"; };
 		BC4780871CEE740500B65508 /* libXrandr.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libXrandr.2.dylib; path = /opt/X11/lib/libXrandr.2.dylib; sourceTree = "<absolute>"; };
 		BC4780881CEE740500B65508 /* libpixman-1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libpixman-1.0.dylib"; path = "/usr/local/Cellar/pixman/0.34.0/lib/libpixman-1.0.dylib"; sourceTree = "<absolute>"; };
 		BC4780891CEE740500B65508 /* libpango-1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libpango-1.0.0.dylib"; path = "/usr/local/Cellar/pango/1.38.1/lib/libpango-1.0.0.dylib"; sourceTree = "<absolute>"; };
@@ -190,6 +192,7 @@
 				BC4780971CEE741F00B65508 /* Extra */,
 				BC47CEB41CEE737E00396868 /* main.swift */,
 				7A02F0EA1CF8123A006DA03B /* InputHandler.swift */,
+				7A3756B01CF820C30050AFA8 /* QWUEvent.swift */,
 				7A02F0EC1CF812BD006DA03B /* TextHandler.swift */,
 			);
 			path = QWUGraphics;
@@ -255,6 +258,7 @@
 				BC47809C1CEE742F00B65508 /* Context.swift in Sources */,
 				BC4780A41CEE745300B65508 /* CairoStructs.swift in Sources */,
 				BC4780A31CEE745300B65508 /* CairoEnums.swift in Sources */,
+				7A3756B11CF820C30050AFA8 /* QWUEvent.swift in Sources */,
 				BC4780B11CEE747B00B65508 /* QWUWindow.swift in Sources */,
 				7A02F0EB1CF8123A006DA03B /* InputHandler.swift in Sources */,
 				BC7A31D71CEFBFFD00A564B6 /* README.md in Sources */,
