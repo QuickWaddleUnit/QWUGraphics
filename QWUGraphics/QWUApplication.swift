@@ -20,6 +20,9 @@ public class QWUApplication {
     private static var windows = [UInt: QWUWindow]()
     internal static var activeWindow: QWUWindow? = nil
     
+    // Event Handlers
+    private static var eventHandlers: [InputHandler]?
+    
     // MARK: Xlib Functions
     // Name: screenCount()
     // No parameters
